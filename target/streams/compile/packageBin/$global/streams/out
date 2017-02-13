@@ -1,0 +1,25 @@
+[0m[[0minfo[0m] [0mPackaging C:\Users\Finotek\Projects\DexJavaGateway\target\scala-2.12\dexjavagateway_2.12-1.0.jar ...[0m
+[0m[[0mdebug[0m] [0mInput file mappings:[0m
+[0m[[0mdebug[0m] [0m	com\finotek\dexgateway\DexyRequest$.class[0m
+[0m[[0mdebug[0m] [0m	  C:\Users\Finotek\Projects\DexJavaGateway\target\scala-2.12\classes\com\finotek\dexgateway\DexyRequest$.class[0m
+[0m[[0mdebug[0m] [0m	com[0m
+[0m[[0mdebug[0m] [0m	  C:\Users\Finotek\Projects\DexJavaGateway\target\scala-2.12\classes\com[0m
+[0m[[0mdebug[0m] [0m	com\finotek\dexgateway\DexGateway.class[0m
+[0m[[0mdebug[0m] [0m	  C:\Users\Finotek\Projects\DexJavaGateway\target\scala-2.12\classes\com\finotek\dexgateway\DexGateway.class[0m
+[0m[[0mdebug[0m] [0m	com\finotek[0m
+[0m[[0mdebug[0m] [0m	  C:\Users\Finotek\Projects\DexJavaGateway\target\scala-2.12\classes\com\finotek[0m
+[0m[[0mdebug[0m] [0m	com\finotek\dexgateway\DexyRequest.class[0m
+[0m[[0mdebug[0m] [0m	  C:\Users\Finotek\Projects\DexJavaGateway\target\scala-2.12\classes\com\finotek\dexgateway\DexyRequest.class[0m
+[0m[[0mdebug[0m] [0m	com\finotek\dexgateway\DexRequest.class[0m
+[0m[[0mdebug[0m] [0m	  C:\Users\Finotek\Projects\DexJavaGateway\target\scala-2.12\classes\com\finotek\dexgateway\DexRequest.class[0m
+[0m[[0mdebug[0m] [0m	DexRequest$.class[0m
+[0m[[0mdebug[0m] [0m	  C:\Users\Finotek\Projects\DexJavaGateway\target\scala-2.12\classes\DexRequest$.class[0m
+[0m[[0mdebug[0m] [0m	com\finotek\dexgateway\DexFunction.class[0m
+[0m[[0mdebug[0m] [0m	  C:\Users\Finotek\Projects\DexJavaGateway\target\scala-2.12\classes\com\finotek\dexgateway\DexFunction.class[0m
+[0m[[0mdebug[0m] [0m	com\finotek\dexgateway\DexPlugin.class[0m
+[0m[[0mdebug[0m] [0m	  C:\Users\Finotek\Projects\DexJavaGateway\target\scala-2.12\classes\com\finotek\dexgateway\DexPlugin.class[0m
+[0m[[0mdebug[0m] [0m	com\finotek\dexgateway[0m
+[0m[[0mdebug[0m] [0m	  C:\Users\Finotek\Projects\DexJavaGateway\target\scala-2.12\classes\com\finotek\dexgateway[0m
+[0m[[0mdebug[0m] [0m	com\finotek\dexgateway\DexRequestParams.class[0m
+[0m[[0mdebug[0m] [0m	  C:\Users\Finotek\Projects\DexJavaGateway\target\scala-2.12\classes\com\finotek\dexgateway\DexRequestParams.class[0m
+[0m[[0minfo[0m] [0mDone packaging.[0m
