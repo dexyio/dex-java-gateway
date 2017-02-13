@@ -16,7 +16,7 @@ class DexGateway(nodeName:String, messageBox:String, cookie:String) {
   private var isTerminated = false
   private var plugins:java.util.Map[AppName, DexPlugin] = new util.HashMap[AppName, DexPlugin]
 
-  val node:OtpNode = new OtpNode(nodeName)
+  val node:OtpNode = new OtpNode(nodeName + "@127.0.0.1")
   node.setCookie(cookie)
 
   val mailbox:OtpMbox = node.createMbox(messageBox)
@@ -30,6 +30,8 @@ class DexGateway(nodeName:String, messageBox:String, cookie:String) {
     while (!isTerminated) {
       mailbox.receive() match {
         case recv:OtpErlangTuple =>
+          println("Received a message(tuple).")
+
           val requestTry = Try(bindToRequest(recv))
           requestTry.fold(
             errors => {
@@ -37,6 +39,7 @@ class DexGateway(nodeName:String, messageBox:String, cookie:String) {
             },
             request => {
               if(plugins.containsKey(request.app)) {
+                println("found plugin.")
                 val plugin = plugins.get(request.app)
                 plugin.execute(request, mailbox)
               } else {
@@ -63,9 +66,9 @@ class DexGateway(nodeName:String, messageBox:String, cookie:String) {
     println(recv.toString)
 
     val pid        = recv.elementAt(0).asInstanceOf[OtpErlangPid]
-    val requestId  = binToString(recv.elementAt(1).asInstanceOf[OtpErlangBinary])
-    val plugin     = binToString(recv.elementAt(2).asInstanceOf[OtpErlangBinary])
-    val fun        = binToString(recv.elementAt(3).asInstanceOf[OtpErlangBinary])
+    val requestId  = recv.elementAt(1).asInstanceOf[OtpErlangAtom].atomValue()
+    val plugin     = recv.elementAt(2).asInstanceOf[OtpErlangAtom].atomValue()
+    val fun        = recv.elementAt(3).asInstanceOf[OtpErlangAtom].atomValue()
     val params     = recv.elementAt(4).asInstanceOf[OtpErlangList]
 
     DexyRequest(pid, requestId, plugin, fun, params, null)
