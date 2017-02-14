@@ -28,10 +28,10 @@ class DexPlugin {
     functions.put(key, func)
 }
 
-class DexRequest(val params:DexRequestParams, val requestId:String, pid:OtpErlangPid, mailbox:OtpMbox) {
+class DexRequest(val params:DexRequestParams, val requestId:Long, pid:OtpErlangPid, mailbox:OtpMbox) {
   def send(list:OtpErlangList): Unit = {
     val resultParams = List[OtpErlangObject](
-      new OtpErlangBitstr(requestId.getBytes("UTF-8")),
+      new OtpErlangLong(requestId),
       list
     )
     val result = new OtpErlangTuple(resultParams.toArray)

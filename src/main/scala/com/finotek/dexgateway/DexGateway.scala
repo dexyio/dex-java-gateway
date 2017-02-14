@@ -6,7 +6,7 @@ import com.ericsson.otp.erlang._
 
 import scala.util.Try
 
-case class DexyRequest(pid:OtpErlangPid, requestId:String,
+case class DexyRequest(pid:OtpErlangPid, requestId:Long,
                       app:String, fun:String, params:OtpErlangList, options:OtpErlangMap = null)
 
 class DexGateway(nodeName:String, messageBox:String, cookie:String) {
@@ -66,9 +66,9 @@ class DexGateway(nodeName:String, messageBox:String, cookie:String) {
     println(recv.toString)
 
     val pid        = recv.elementAt(0).asInstanceOf[OtpErlangPid]
-    val requestId  = recv.elementAt(1).asInstanceOf[OtpErlangAtom].atomValue()
-    val plugin     = recv.elementAt(2).asInstanceOf[OtpErlangAtom].atomValue()
-    val fun        = recv.elementAt(3).asInstanceOf[OtpErlangAtom].atomValue()
+    val requestId  = recv.elementAt(1).asInstanceOf[OtpErlangLong].longValue()
+    val plugin     = new String(recv.elementAt(2).asInstanceOf[OtpErlangBitstr].binaryValue(), "UTF-8")
+    val fun        = new String(recv.elementAt(3).asInstanceOf[OtpErlangBitstr].binaryValue(), "UTF-8")
     val params     = recv.elementAt(4).asInstanceOf[OtpErlangList]
 
     DexyRequest(pid, requestId, plugin, fun, params, null)
