@@ -55,8 +55,7 @@ class DexGateway(nodeName:String, messageBox:String, cookie:String) {
     println("dex-gateway stopped.")
   }
 
-  def terminate():Unit =
-    isTerminated = true
+  def terminate():Unit = isTerminated = true
 
   def addPlugin(appName:AppName, dexPlugin:DexPlugin): Unit = plugins.put(appName, dexPlugin)
 
